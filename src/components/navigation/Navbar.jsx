@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import { useState } from "react";
 import ProfileModal from "../user/ProfileModal";
-import { ThemeToggle } from "../ui/ThemeTOggle";
+import { ThemeToggle } from "../ui/ThemeToggle";
 import { LogOut } from "lucide-react";
 
 const Navbar = () => {
