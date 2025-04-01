@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import fetchMessages from "../../utils/fetchMessages";
 import { useConversation } from "../../contexts/ConversationsContext";
 import SingleMessage from "./SingleMessage";
-import formatDateHeader from "../../utils/FormatDateHeader";
+import formatDateHeader from "../../utils/formatDateHeader";
 import LoadingMessages from "../ui/LoadingMessages";
 import { ArrowBigDown, MessagesSquare } from "lucide-react";
 
