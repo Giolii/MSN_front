@@ -46,7 +46,7 @@ const ProfilePicture = () => {
       >
         <img
           className="w-full h-full object-cover"
-          src={previewUrl || currentUser.avatar}
+          src={previewUrl || currentUser?.avatar}
           alt="User Avatar"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200 cursor-pointer">

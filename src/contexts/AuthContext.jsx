@@ -72,6 +72,29 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const guestLogin = async () => {
+    try {
+      setError("");
+      setLoading(true);
+
+      const response = await axios.post(`${API_URL}/auth/guest`);
+
+      const { token, user } = response.data;
+
+      localStorage.setItem("token", token);
+
+      setToken(token);
+      setCurrentUser(user);
+
+      return user;
+    } catch (error) {
+      setError(error.response?.data?.error || "Failed to login as a guest");
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const register = async (username, email, password) => {
     try {
       setError("");
@@ -108,6 +131,7 @@ export function AuthProvider({ children }) {
     loading,
     error,
     login,
+    guestLogin,
     register,
     logout,
     isAuthenticated: !!token,

@@ -16,7 +16,7 @@ const ProfileModal = ({ setOpenModal }) => {
       >
         <div className="p-6 bg-gradient-to-r from-indigo-500 to-indigo-600 dark:from-indigo-600 dark:to-indigo-700 text-white">
           <h2 className="text-2xl font-bold text-center">
-            {currentUser.username}'s Profile
+            {currentUser?.username}'s Profile
           </h2>
         </div>
 
@@ -32,25 +32,25 @@ const ProfileModal = ({ setOpenModal }) => {
             <div className="bg-white dark:bg-zinc-800 p-6 space-y-4 w-full">
               <ProfileField
                 label={"name"}
-                value={currentUser.name}
+                value={currentUser?.name}
                 labelValue={"Name"}
                 edit={true}
               />
               <ProfileField
                 label={"aboutMe"}
-                value={currentUser.aboutMe}
+                value={currentUser?.aboutMe}
                 labelValue={"About me"}
                 edit={true}
               />
               <ProfileField
                 label={"email"}
-                value={currentUser.email}
+                value={currentUser?.email}
                 labelValue={"Email"}
                 edit={false}
               />
               <ProfileField
                 label={"createdAt"}
-                value={new Date(currentUser.createdAt).toLocaleDateString()}
+                value={new Date(currentUser?.createdAt).toLocaleDateString()}
                 labelValue={"Joined"}
                 edit={false}
               />

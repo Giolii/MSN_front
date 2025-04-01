@@ -6,7 +6,7 @@ import { ThemeToggle } from "../ui/ThemeTOggle";
 import { LogOut } from "lucide-react";
 
 const Navbar = () => {
-  const { currentUser, logout } = useAuth();
+  const { currentUser, logout, guestLogin } = useAuth();
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -47,16 +47,23 @@ const Navbar = () => {
                 <ThemeToggle />
               </div>
             ) : (
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center gap-3 sm:space-x-6 ">
+                <button
+                  className="bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-medium py-2 px-2 sm:px-4 rounded-lg transition-colors duration-200"
+                  onClick={() => guestLogin()}
+                >
+                  Guest
+                </button>
+
                 <Link
                   to="/register"
-                  className="bg-indigo-500 hover:bg-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+                  className="bg-indigo-500 hover:bg-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-700 text-white font-medium py-2 px-2 sm:px-4 rounded-lg transition-colors duration-200"
                 >
                   Register
                 </Link>
                 <Link
                   to="/login"
-                  className="bg-zinc-700 hover:bg-zinc-800 dark:bg-zinc-600 dark:hover:bg-zinc-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+                  className="bg-cyan-700 hover:bg-cyan-800 dark:bg-cyan-600 dark:hover:bg-cyan-700 text-white font-medium py-2 px-2 sm:px-4 rounded-lg transition-colors duration-200"
                 >
                   Login
                 </Link>

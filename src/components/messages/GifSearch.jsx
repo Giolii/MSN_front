@@ -66,7 +66,7 @@ const GifSearch = ({ setOpenGif, setImageToSendPreview, setImageToSend }) => {
         className="bg-white dark:bg-zinc-800 rounded-lg shadow-lg w-full max-w-lg flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-4 border-b border-zinc-200 dark:border-zinc-700 flex justify-between items-center">
+        <div className=" p-4 border-b border-zinc-200 dark:border-zinc-700 flex justify-between items-center">
           <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
             Select a GIF
           </h3>
@@ -91,13 +91,13 @@ const GifSearch = ({ setOpenGif, setImageToSendPreview, setImageToSend }) => {
 
         <div
           ref={containerRef}
-          className="overflow-y-auto p-4 grid grid-cols-2 sm:grid-cols-3 gap-2 h-96 bg-zinc-50 dark:bg-zinc-900"
+          className="h-96 overflow-y-auto p-4 grid grid-cols-2 sm:grid-cols-3 gap-2  bg-zinc-50 dark:bg-zinc-900 "
           onScroll={handleScroll}
         >
-          {gifs.map((gif) => (
+          {gifs.map((gif, index) => (
             <div
-              key={gif.id}
-              className="cursor-pointer hover:opacity-75 transition-opacity bg-white dark:bg-zinc-800 rounded-md overflow-hidden shadow-sm"
+              key={`${gif.id}-${index}`}
+              className="flex items-center justify-center cursor-pointer hover:opacity-75 transition-opacity bg-white dark:bg-zinc-800 rounded-md  shadow-sm h-full"
               onClick={() => handleClick(gif)}
             >
               <img

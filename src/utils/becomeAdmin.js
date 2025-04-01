@@ -14,7 +14,7 @@ const becomeAdmin = async (username, participantId, conversationId) => {
       }
     );
 
-    const response = await axios.post(
+    const response = await axios.put(
       `${import.meta.env.VITE_API_URL}/users/admin`,
       {
         participantId: participantId,

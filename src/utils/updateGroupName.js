@@ -4,7 +4,7 @@ const updateGroupName = async (conversation, groupName) => {
   const token = localStorage.getItem("token");
   try {
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    const response = await axios.post(
+    const response = await axios.put(
       `${import.meta.env.VITE_API_URL}/conv/editName`,
       {
         conversationId: conversation.id,
