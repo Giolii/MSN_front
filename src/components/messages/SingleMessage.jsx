@@ -122,11 +122,11 @@ const SingleMessage = ({ msg, setMessages }) => {
             } shadow-sm transition-all duration-200 break-words`}
           >
             {msg.imageUrl && (
-              <div className="mb-2 rounded-lg overflow-hidden">
+              <div className="mb-2 rounded-lg overflow-hidden h-40 w-40 sm:h-full sm:w-full">
                 <img
                   src={msg.imageUrl}
                   alt="Message attachment"
-                  className="max-w-full max-h-60 object-contain"
+                  className="w-full h-full object-contain"
                 />
               </div>
             )}
